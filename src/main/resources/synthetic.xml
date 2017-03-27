@@ -69,6 +69,10 @@
         <property name="targetDirectory" default="${deployed.container.filesDirPath}/${deployed.functionality}/" hidden="true"/>
         <property name="targetFile" default="${deployed.name}" hidden="false"/>
         <property name="preserveExistingFiles" default="true" kind="boolean" hidden="false"/>
+        <property name="filePermissions" required="false" description="If set, the UNIX file permissions to be applied to the artifact, e.g. 644">
+          <rule type="regex" pattern="[0-7]{3}"/>
+        </property>
+        <property name="setFilePermission" hidden="true" default="powercenter/powercenter_unixFS.sh.flt" />
     </type>
 
     <type-modification type="powercenter.PowercenterMiscFile">
